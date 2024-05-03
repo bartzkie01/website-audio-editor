@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Editor</title>
+    <!-- Include CSS for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Wavesurfer.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/wavesurfer.js/dist/wavesurfer.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Audio Editor</h1>
+        <div class="upload-section">
+            <label for="audioFile">Choose an audio file:</label>
+            <input type="file" id="audioFile" accept=".mp3,.wav">
+            <button onclick="loadAudio()">Load Audio</button>
+            <p id="fileUploadInstructions" hidden>This input accepts MP3 and WAV audio files.</p>
+        </div>
+        <div class="controls-section">
+            <div class="playback-controls">
+                <button id="playButton" onclick="togglePlayPause()">Play</button>
+                <button id="stopButton" onclick="stopAudio()">Stop</button>
+            </div>
+            <div class="effects-controls">
+                <button onclick="applyFadeIn()">Fade In</button>
+                <button onclick="applyFadeOut()">Fade Out</button>
+                <button onclick="applyTrim()">Trim</button>
+                <button onclick="applyCut()">Cut</button>
+            </div>
+        </div>
+        <div id="waveform"></div>
+    </div>
+    
+    <!-- Include Wavesurfer.js -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <!-- Script for handling audio loading, editing, and playback -->
+    <script src="script.js"></script>
+</body>
+</html>
